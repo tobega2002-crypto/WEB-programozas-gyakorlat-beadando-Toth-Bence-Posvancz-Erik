@@ -1,3 +1,27 @@
+<?php
+require_once('./includes/config.inc.php');
+
+if(isset($_POST['feltolt']) && isset($_SESSION['login'])) {
+
+    $target_dir = "images/upload/";
+    $file_name = basename($_FILES["kep"]["name"]);
+    $target_file = $target_dir . $file_name;
+
+    if(move_uploaded_file($_FILES["kep"]["tmp_name"], $target_file)) {
+
+        $sql = "INSERT INTO kepek (fajlnev, feltolto, feltoltes_datuma)
+                VALUES ('$file_name', '".$_SESSION['login']."', NOW())";
+
+        $dbh->query($sql);
+
+        echo "<p>Sikeres feltöltés!</p>";
+    } else {
+        echo "<p>Hiba történt a feltöltés során!</p>";
+    }
+}
+?>
+
+
 <h2>Képgaléria</h2>
 
 <?php
