@@ -51,21 +51,30 @@ nav ul a {
     transition: 0.3s;
 }
 
-div#content {
-    display: table-cell;
-    width: 100%;
-    border-radius: 10px;
-    background-color: #99FFCC;
-    padding: 15px;
+#content {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-div#content img{
+#content img {
     float: right;
     width: 20em;
-    height: auto;
     margin: 0 0 15px 15px;
-    padding: 3px;
-    border: 3px solid blue;
+    border-radius: 10px;
+    border: 3px solid #4facfe;
+}
+
+video,
+iframe {
+    display: block;
+    margin: 25px auto;
+    width: 560px;
+    height: 315px;
+    border-radius: 15px;
+    border: 3px solid #4facfe;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 footer {
