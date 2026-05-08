@@ -2,7 +2,8 @@
 if(isset($_POST['felhasznalo']) && isset($_POST['jelszo'])) {
     try {
         // Kapcsolódás
-        global $dbh;
+        $dbh = new PDO('mysql:host=localhost;dbname=gyakorlat7', 'root', '',
+                        array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
         $dbh->query('SET NAMES utf8 COLLATE utf8_hungarian_ci');
         
         // Felhsználó keresése
