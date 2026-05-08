@@ -28,3 +28,30 @@ if (isset($_GET['edit'])) {
         <input type="password" name="jelszo" placeholder="Jelszó" required class="form-input">
     </form>
 <?php } ?>
+
+<table class="crud-table">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Login</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    $stmt = $dbh->query("SELECT * FROM felhasznalok ORDER BY id ASC");
+    foreach ($stmt as $row) {
+        echo "<tr>";
+        echo "<td>{$row['id']}</td>";
+        echo "<td><strong style='color: #222; font-weight: 600;'>{$row['csaladi_nev']} {$row['uto_nev']}</strong></td>";
+        echo "<td>{$row['bejelentkezes']}</td>";
+        echo "<td style='text-align: right; width: 150px;'>
+                <a class='btn-edit' href='?crud&edit={$row['id']}'>Edit</a>
+                <a class='btn-delete' href='?crud&delete={$row['id']}' onclick=\"return confirm('Biztosan törlöd?')\">Delete</a>
+              </td>";
+        echo "</tr>";
+    }
+    ?>
+    </tbody>
+</table>
