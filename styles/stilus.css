@@ -12,6 +12,10 @@ header img {
     display: block;
 }
 
+header h1 {
+    margin: 0;
+}
+
 #wrapper {
     margin: 20px;
 }
@@ -19,6 +23,12 @@ header img {
 aside {
     display: block;
     width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #eef2f3, #dfe9f3);
 }
 
 nav {
@@ -49,6 +59,10 @@ nav ul a {
     color: white;
     font-weight: bold;
     transition: 0.3s;
+}
+
+nav ul a:hover {
+    color: #00f2fe;
 }
 
 #content {
