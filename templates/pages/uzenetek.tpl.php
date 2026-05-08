@@ -7,3 +7,16 @@ if (!isset($_SESSION['login'])) {
     exit;
 }
 ?>
+
+
+
+<h2>Beérkezett üzenetek</h2>
+
+<table border="1">
+    <tr>
+        <th>Név</th>
+        <th>Email</th>
+        <th>Üzenet</th>
+        <th>Időpont</th>
+    </tr>
+</table>
