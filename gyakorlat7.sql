@@ -1,7 +1,6 @@
-CREATE DATABASE `gyakorlat7`
-CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE `beadando123` CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-USE `gyakorlat7`;
+USE `beadando123`;
 
 CREATE TABLE `felhasznalok` (
   `id` int(10) unsigned NOT NULL auto_increment,
@@ -27,3 +26,18 @@ INSERT INTO `felhasznalok` (`id`,`csaladi_nev`,`uto_nev`,`bejelentkezes`,`jelszo
  (10,'Családi_10','Utónév_10','Login10',sha1('login10')),
  (11,'Családi_11','Utónév_11','Login11',sha1('login11')),
  (12,'Családi_12','Utónév_12','Login12',sha1('login12'));
+
+CREATE TABLE kepek (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fajlnev VARCHAR(255) NOT NULL,
+    feltolto VARCHAR(100),
+    feltoltes_datuma DATETIME
+);
+
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
