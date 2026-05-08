@@ -18,7 +18,9 @@ header h1 {
 
 #wrapper {
     margin: 20px;
+    display: block;
 }
+
 
 aside {
     display: block;
