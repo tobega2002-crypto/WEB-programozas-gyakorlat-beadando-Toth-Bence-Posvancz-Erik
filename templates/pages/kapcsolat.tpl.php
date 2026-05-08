@@ -14,3 +14,24 @@
     <button type="submit">Küldés</button>
 
 </form>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+        alert("Minden mező kitöltése kötelező!");
+        return false;
+    }
+
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Hibás email cím!");
+        return false;
+    }
+
+    return true;
+}
+</script>
